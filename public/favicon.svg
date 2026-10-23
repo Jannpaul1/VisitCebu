@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="visitcebu-pin" x1="8" x2="56" y1="8" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 5C19.3 5 9 15.4 9 28.2c0 15.9 18 27.4 22.3 30.3a2.5 2.5 0 0 0 3.4 0C37 55.6 55 44.1 55 28.2 55 15.4 44.7 5 32 5Z" fill="url(#visitcebu-pin)"/>
+  <circle cx="32" cy="28" r="11.5" fill="#F8FAFC"/>
+  <path d="M32 18.9c-5.1 0-9.1 4.1-9.1 9.1s4 9.1 9.1 9.1 9.1-4.1 9.1-9.1-4-9.1-9.1-9.1Zm0 3.6a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z" fill="#0F172A" opacity="0.18"/>
+</svg>
