@@ -25,7 +25,7 @@ export function MobileMenu({ open, onClose, onLogout, userName }: MobileMenuProp
     <div className="absolute left-0 right-0 top-full z-30 border-b border-slate-200 bg-white p-4 shadow-xl lg:hidden">
       <div className="mb-4 flex items-center justify-between">
         <span className="text-sm font-medium text-slate-600">Menu</span>
-        <button type="button" onClick={onClose} className="rounded-full bg-slate-100 p-2 text-slate-600">
+        <button type="button" aria-label="Close menu" onClick={onClose} className="rounded-full bg-slate-100 p-2 text-slate-600">
           <X className="h-4 w-4" />
         </button>
       </div>

@@ -45,16 +45,16 @@ export function SignupPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">Full name</label>
-            <input type="text" value={name} onChange={(event) => setName(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="Juan Dela Cruz" />
+            <label htmlFor="signup-name" className="mb-2 block text-sm font-medium text-slate-700">Full name</label>
+            <input id="signup-name" type="text" required value={name} onChange={(event) => setName(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="Juan Dela Cruz" />
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">Email</label>
-              <input type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="you@example.com" />
+            <label htmlFor="signup-email" className="mb-2 block text-sm font-medium text-slate-700">Email</label>
+            <input id="signup-email" type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="you@example.com" />
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">Password</label>
-              <input type="password" minLength={8} autoComplete="new-password" required value={password} onChange={(event) => setPassword(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="At least 8 characters" />
+            <label htmlFor="signup-password" className="mb-2 block text-sm font-medium text-slate-700">Password</label>
+            <input id="signup-password" type="password" minLength={8} autoComplete="new-password" required value={password} onChange={(event) => setPassword(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="At least 8 characters" />
           </div>
 
             {error ? <p role="alert" className="text-sm text-rose-600">{error}</p> : null}

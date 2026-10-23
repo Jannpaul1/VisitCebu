@@ -77,12 +77,12 @@ export function ProfilePage() {
 
           <div className="space-y-4">
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">Name</label>
-              <input value={name} onChange={(event) => setName(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" />
+              <label htmlFor="profile-name" className="mb-2 block text-sm font-medium text-slate-700">Name</label>
+              <input id="profile-name" value={name} onChange={(event) => setName(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">Email</label>
-              <input value={user.email} disabled className="w-full rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-500" />
+              <label htmlFor="profile-email" className="mb-2 block text-sm font-medium text-slate-700">Email</label>
+              <input id="profile-email" value={user.email} disabled className="w-full rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-500" />
             </div>
             {error ? <p role="alert" className="text-sm text-rose-600">{error}</p> : null}
             {status ? <p role="status" className="text-sm text-emerald-700">{status}</p> : null}

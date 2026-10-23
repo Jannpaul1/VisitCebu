@@ -152,8 +152,8 @@ export function ReviewSection({ destinationSlug, destinationName }: ReviewSectio
 
       {user ? (
         <form onSubmit={handleSubmit} className="mb-8 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <label className="mb-3 block text-sm font-medium text-slate-700">Your rating</label>
-          <div className="mb-4 flex items-center gap-2">
+          <p className="mb-3 text-sm font-medium text-slate-700">Your rating</p>
+          <div role="group" aria-label="Your rating" className="mb-4 flex items-center gap-2">
             {[1, 2, 3, 4, 5].map((value) => (
               <button
                 key={value}
@@ -166,7 +166,11 @@ export function ReviewSection({ destinationSlug, destinationName }: ReviewSectio
               </button>
             ))}
           </div>
+          <label htmlFor="review-comment" className="mb-2 block text-sm font-medium text-slate-700">
+            Your review
+          </label>
           <textarea
+            id="review-comment"
             required
             value={comment}
             onChange={(event) => setComment(event.target.value)}

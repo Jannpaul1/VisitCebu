@@ -99,6 +99,7 @@ export function Navbar() {
 
           <Link
             to="/favorites"
+            aria-label="Favorites"
             className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm hover:border-emerald-200 hover:text-emerald-700"
           >
             <Heart className="h-4 w-4" />
@@ -156,6 +157,7 @@ export function Navbar() {
         <div className="flex items-center gap-3 lg:hidden">
           <Link
             to="/favorites"
+            aria-label="Favorites"
             className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700"
           >
             <Heart className="h-4 w-4" />

@@ -148,10 +148,11 @@ export function EventsPage() {
       <section className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm">
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">
+            <label htmlFor="event-month" className="mb-2 block text-sm font-medium text-slate-700">
               Month
             </label>
             <select
+              id="event-month"
               value={month}
               onChange={(event) => setMonth(event.target.value)}
               className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-violet-500"
@@ -165,10 +166,11 @@ export function EventsPage() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">
+            <label htmlFor="event-category" className="mb-2 block text-sm font-medium text-slate-700">
               Category
             </label>
             <select
+              id="event-category"
               value={category}
               onChange={(event) => setCategory(event.target.value)}
               className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-violet-500"

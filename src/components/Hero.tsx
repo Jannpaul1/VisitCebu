@@ -43,9 +43,9 @@ export function Hero({ searchResults }: HeroProps) {
                 Event: `/events/${item.slug}`,
               }
 
-              navigate(routeMap[item.type] ?? `/explore?query=${encodeURIComponent(item.name)}`)
+              navigate(routeMap[item.type] ?? `/explore?search=${encodeURIComponent(item.name)}`)
             }}
-            onSubmit={(query) => navigate(`/explore?query=${encodeURIComponent(query)}`)}
+            onSubmit={(query) => navigate(`/explore?search=${encodeURIComponent(query)}`)}
           />
         </div>
 

@@ -34,7 +34,10 @@ export function DestinationPage() {
     () => itineraries[0]?.id ?? ''
   )
   const [showModal, setShowModal] = useState(false)
-  const [failedImages, setFailedImages] = useState<string[]>([])
+  const [failedImages, setFailedImages] = useState<{
+    slug: string | undefined
+    images: string[]
+  }>({ slug, images: [] })
 
   const destination = useMemo(
     () => destinations.find((entry) => entry.slug === slug),
@@ -46,10 +49,6 @@ export function DestinationPage() {
       addRecentlyViewed(slug)
     }
   }, [addRecentlyViewed, slug])
-
-  useEffect(() => {
-    setFailedImages([])
-  }, [slug])
 
   const activeItineraryId =
     selectedItineraryId || itineraries[0]?.id || ''
@@ -69,13 +68,18 @@ export function DestinationPage() {
   }
 
   const galleryImages = destination.gallery.filter(
-    (image) => Boolean(image?.trim()) && !failedImages.includes(image)
+    (image) =>
+      Boolean(image?.trim()) &&
+      !(failedImages.slug === slug && failedImages.images.includes(image))
   )
 
   const handleImageError = (image: string) => {
-    setFailedImages((previous) =>
-      previous.includes(image) ? previous : [...previous, image]
-    )
+    setFailedImages((previous) => {
+      const images = previous.slug === slug ? previous.images : []
+      return images.includes(image)
+        ? previous
+        : { slug, images: [...images, image] }
+    })
   }
 
   const addToItinerary = () => {
@@ -380,11 +384,12 @@ export function DestinationPage() {
         onClose={() => setShowModal(false)}
       >
         <div className="space-y-4">
-          <label className="block text-sm font-medium text-slate-700">
+          <label htmlFor="itinerary-select" className="block text-sm font-medium text-slate-700">
             Choose itinerary
           </label>
 
           <select
+            id="itinerary-select"
             value={activeItineraryId}
             onChange={(event) =>
               setSelectedItineraryId(event.target.value)

@@ -9,12 +9,13 @@ interface ItineraryCardProps {
   onMoveRight?: (dayIndex: number, itemId: string) => void
   onMoveWithinDay?: (dayIndex: number, itemId: string, direction: -1 | 1) => void
   onUpdateNotes?: (dayIndex: number, itemId: string, notes: string) => void
+  onUpdateTime?: (dayIndex: number, itemId: string, startTime: string | undefined) => void
   onRename?: (name: string) => void
   onDelete?: () => void
   onAddDay?: () => void
 }
 
-export function ItineraryCard({ itinerary, onRemoveItem, onMoveLeft, onMoveRight, onMoveWithinDay, onUpdateNotes, onRename, onDelete, onAddDay }: ItineraryCardProps) {
+export function ItineraryCard({ itinerary, onRemoveItem, onMoveLeft, onMoveRight, onMoveWithinDay, onUpdateNotes, onUpdateTime, onRename, onDelete, onAddDay }: ItineraryCardProps) {
   const [editingName, setEditingName] = useState(false)
   const [name, setName] = useState(itinerary.name)
 
@@ -62,7 +63,7 @@ export function ItineraryCard({ itinerary, onRemoveItem, onMoveLeft, onMoveRight
                         <div className="flex items-center justify-between gap-2">
                           <p className="truncate text-sm font-semibold text-slate-800">{item.name}</p>
                           {onRemoveItem ? (
-                            <button type="button" onClick={() => onRemoveItem(dayIndex, item.id)} className="text-slate-400 hover:text-rose-600">
+                            <button type="button" aria-label={`Remove ${item.name} from itinerary`} onClick={() => onRemoveItem(dayIndex, item.id)} className="text-slate-400 hover:text-rose-600">
                               <Trash2 className="h-4 w-4" />
                             </button>
                           ) : null}
@@ -78,6 +79,16 @@ export function ItineraryCard({ itinerary, onRemoveItem, onMoveLeft, onMoveRight
                     <label className="mt-3 block text-xs font-medium text-slate-600">
                       Notes
                       <textarea value={item.notes} onChange={(event) => onUpdateNotes?.(dayIndex, item.id, event.target.value)} rows={2} className="mt-1 w-full resize-y rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-xs text-slate-700" />
+                    </label>
+
+                    <label className="mt-3 block text-xs font-medium text-slate-600">
+                      Start time
+                      <input
+                        type="time"
+                        value={item.startTime ?? ''}
+                        onChange={(event) => onUpdateTime?.(dayIndex, item.id, event.target.value || undefined)}
+                        className="mt-1 w-full rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-xs text-slate-700"
+                      />
                     </label>
 
                     <div className="mt-3 flex items-center justify-between gap-2">

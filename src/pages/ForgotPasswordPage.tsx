@@ -37,8 +37,8 @@ export function ForgotPasswordPage() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">Email</label>
-                <input type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="you@example.com" />
+              <label htmlFor="forgot-email" className="mb-2 block text-sm font-medium text-slate-700">Email</label>
+              <input id="forgot-email" type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-emerald-500" placeholder="you@example.com" />
             </div>
             {error ? <p role="alert" className="text-sm text-rose-600">{error}</p> : null}
             <button type="submit" disabled={isSubmitting} className="w-full rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700">

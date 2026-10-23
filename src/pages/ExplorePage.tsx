@@ -151,11 +151,12 @@ export function ExplorePage() {
           <div className="space-y-5">
             {/* Location */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">
+              <label htmlFor="explore-location" className="mb-2 block text-sm font-medium text-slate-700">
                 Location
               </label>
 
               <select
+                id="explore-location"
                 value={location}
                 onChange={(event) => setLocation(event.target.value)}
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-emerald-500"
@@ -170,11 +171,12 @@ export function ExplorePage() {
 
             {/* Category */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">
+              <label htmlFor="explore-category" className="mb-2 block text-sm font-medium text-slate-700">
                 Category
               </label>
 
               <select
+                id="explore-category"
                 value={category}
                 onChange={(event) => setCategory(event.target.value)}
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-emerald-500"
@@ -189,11 +191,12 @@ export function ExplorePage() {
 
             {/* Price */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">
+              <label htmlFor="explore-price" className="mb-2 block text-sm font-medium text-slate-700">
                 Price
               </label>
 
               <select
+                id="explore-price"
                 value={price}
                 onChange={(event) => setPrice(event.target.value)}
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-emerald-500"
@@ -207,11 +210,12 @@ export function ExplorePage() {
 
             {/* Rating */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">
+              <label htmlFor="explore-rating" className="mb-2 block text-sm font-medium text-slate-700">
                 Rating
               </label>
 
               <select
+                id="explore-rating"
                 value={rating}
                 onChange={(event) => setRating(event.target.value)}
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-emerald-500"
@@ -225,11 +229,12 @@ export function ExplorePage() {
 
             {/* Sort */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">
+              <label htmlFor="explore-sort" className="mb-2 block text-sm font-medium text-slate-700">
                 Sort
               </label>
 
               <select
+                id="explore-sort"
                 value={sort}
                 onChange={(event) => setSort(event.target.value)}
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-emerald-500"
